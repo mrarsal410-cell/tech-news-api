@@ -91,4 +91,8 @@ app.get('/news/:sourceId', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+}
+
+module.exports = app;
